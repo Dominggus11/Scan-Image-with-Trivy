@@ -1,5 +1,5 @@
 {
-  "SchemaVersion": {"nama":"Roy","marga":"malau"},
+  "SchemaVersion": 2,
   "ArtifactName": "Dockerfile",
   "ArtifactType": "filesystem",
   "Metadata": {

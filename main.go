@@ -6,7 +6,12 @@ import (
 
 func main() {
 
-	trivy.GoTrivy()
+	// for Scan Docker File
+	// trivy.GoTrivy()
+
+	// For Get Something JSON File with Module Gabs
 	trivy.Gabs()
+
+	// For Get Something JSON File with Module Gjson
 	trivy.Gjson()
 }
