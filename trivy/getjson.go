@@ -12,7 +12,7 @@ import (
 
 func Gjson() {
 	// Open our jsonFile
-	jsonFile, err := os.Open("DockerFile/misconfig.json")
+	jsonFile, err := os.Open("fileJson/misconfig.json")
 	// if we os.Open returns an error then handle it
 	if err != nil {
 		fmt.Println(err)
@@ -30,7 +30,7 @@ func Gjson() {
 
 func Gabs() {
 	// Open our Gabs
-	jsonFile, err := gabs.ParseJSONFile("DockerFile/misconfig.json")
+	jsonFile, err := gabs.ParseJSONFile("fileJson/misconfig.json")
 	if err != nil {
 		fmt.Println("Tidak sukses")
 	}
