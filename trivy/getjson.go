@@ -1,14 +1,16 @@
 package trivy
 
 import (
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"os"
+
+	// "github.com/Jeffail/gabs/v2"
+	"github.com/Jeffail/gabs"
+	"github.com/tidwall/gjson"
 )
 
-// Json function
-func OpenJSON() {
+func Gjson() {
 	// Open our jsonFile
 	jsonFile, err := os.Open("DockerFile/misconfig.json")
 	// if we os.Open returns an error then handle it
@@ -21,9 +23,17 @@ func OpenJSON() {
 
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 
-	var result map[string]interface{}
-	json.Unmarshal([]byte(byteValue), &result)
+	value := gjson.Get(string(byteValue), "Results")
+	println(value.String())
 
-	fmt.Println(result["ArtifactName"])
+}
 
+func Gabs() {
+	// Open our Gabs
+	jsonFile, err := gabs.ParseJSONFile("DockerFile/misconfig.json")
+	if err != nil {
+		fmt.Println("Tidak sukses")
+	}
+	value := jsonFile.Path("Results.Target")
+	fmt.Println(value)
 }

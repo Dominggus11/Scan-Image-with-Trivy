@@ -6,6 +6,7 @@ import (
 
 func main() {
 
-	// trivy.GoTrivy()
-	trivy.OpenJSON()
+	trivy.GoTrivy()
+	trivy.Gabs()
+	trivy.Gjson()
 }
