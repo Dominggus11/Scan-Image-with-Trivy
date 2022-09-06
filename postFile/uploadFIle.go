@@ -39,7 +39,7 @@ func UploadFile() {
 			"data":   userObj,
 		})
 	})
-	r.Static("assets", "./fileDocker")
+	// r.Static("fileDocker", "./fileDocker")
 
 	r.Run("localhost:8080")
 }
